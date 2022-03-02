@@ -1,5 +1,8 @@
-Installing gatsby cli
-    npm i -g gatsby-cli
+Gatsby cli
+- npm i -g gatsby-cli
 
-Installing gatsby boilerplate project
-    npx gatsby new gatsby-starter-hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world
+Gatsby boilerplate project
+- npx gatsby new gatsby-starter-hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world
+
+Clean Gatsby cache
+- Gatsby clean
