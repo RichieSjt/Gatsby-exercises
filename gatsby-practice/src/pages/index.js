@@ -1,12 +1,14 @@
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from "react"
 import Layout from "../components/Layout"
 import * as styles from "./home.module.css"
 
 // Desctructuring props to obtain the data returned by the graphql query
-export default function Home() {
-  // console.log(data)
-  // const { title, description } = data.site.siteMetadata
+export default function Home({ data }) {
+  // getImage is a helper function to which takes a File and returns file.childImageSharp.gatsbyImageData, which can be passed to the GatsbyImage component.
+  // It just makes code easier to read
+  const bannerImg = getImage(data.file)
 
   return (
     <Layout>
@@ -19,23 +21,18 @@ export default function Home() {
             My Portfolio Projects
           </Link>
         </div>
-        <img src="/banner.png" alt="" style={{ maxWidth: "100%" }} />
-        {/* <p>
-          {title} - {description}
-        </p> */}
+        <GatsbyImage image={bannerImg} alt="Banner" />
       </section>
     </Layout>
   )
 }
 
-// Page queries
-// export const query = graphql`
-//   query SiteInfo {
-//     site {
-//       siteMetadata {
-//         description
-//         title
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query Banner {
+    file(relativePath: { eq: "banner.png" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+      }
+    }
+  }
+`
