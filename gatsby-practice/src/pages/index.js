@@ -2,7 +2,7 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from "react"
 import Layout from "../components/Layout"
-import * as styles from "./home.module.css"
+import * as styles from "../styles/home.module.css"
 
 // Desctructuring props to obtain the data returned by the graphql query
 export default function Home({ data }) {

@@ -2,7 +2,7 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from "react"
 import Layout from "../../components/Layout"
-import * as styles from "./projects.module.css"
+import * as styles from "../../styles/projects.module.css"
 
 // Base route for a directory is index.js
 // We can access this page in /projects
